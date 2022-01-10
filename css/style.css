@@ -1,0 +1,385 @@
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    box-sizing: border-box;
+}
+/*============================================================*/
+/*                       TEXTE & POLICE                       */
+/*============================================================*/
+@font-face {
+    font-family: "FredokaOne";
+    src: url('../fonts/Fredoka_One/FredokaOne-Regular.ttf');
+}
+a{
+    list-style: none;
+    text-decoration:none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    height: inherit;
+}
+h1{
+    font-family: FredokaOne;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.gridVignette h2, .gridVignette h3{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #21ABE1;
+}
+label{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*============================================================*/
+/*                        DECORATION                          */
+/*============================================================*/
+.ombre{
+    box-shadow: #63626280 0px 4px 8px;
+}
+.fondBleu{
+    background: #21ABE1;
+}
+.fondGris{
+    background-color: #f0f0f0;
+}
+.fondOrange{
+    background-color: #F59824;
+}
+.opacity{
+    opacity: 0.95;
+}
+.colorOrange{
+    color: #F59824;
+}
+.colorBlue{
+    color: #21ABE1;
+}
+/*============================================================*/
+/*                           HEADER                           */
+/*============================================================*/
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.pMenu{
+    display: none;
+}
+.fondHeader{
+    position: absolute;
+    display: flex;
+    height: inherit;
+    width: inherit;
+}
+.navSearch{
+    display: flex;
+    height: inherit;
+    z-index: 999;
+}
+.logoHeader{
+    position: relative;
+    display: flex;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+.logoHeader svg{
+    position: absolute;
+    display: flex;
+    height: inherit;
+    width: inherit;
+    padding: 5px;
+}
+.logoHeader p{
+    display: flex;
+    padding-top: 5px;
+    font-family: FredokaOne;
+}
+.navMenu{
+    display: flex;
+    height: inherit;
+    z-index: 999;
+}
+
+/*======================HEADER=========================*/
+/*Search*/
+.navSearch .menuDeroulant fieldset{
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: space-between;
+    left: 0;
+    padding: 10px;
+    color: white;
+    border-radius: 3px;
+    width: auto;
+}
+.navSearch select, .navSearch input{
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #636262;
+    cursor: pointer;
+}
+.fieldSearch a{
+    display: flex;
+    border: none;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    border-radius: 3px;
+    width: 120px;
+    font-weight: bold;
+    fill: white;
+}
+.fieldSearch a svg{
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+.fieldSearch a:hover, .fieldSearch a:hover svg{
+    color:#F59824;
+    fill:#F59824;
+    background-color: white;
+}
+/*nav*/
+.navMenu .menuDeroulant ul a, .navMenu .menuDeroulant ul a p{
+    display: flex;
+    border: none;
+    align-items: center;
+    right: 0;
+    padding: 10px;
+    margin: auto;
+    color: white;
+    border-radius: 3px;
+    width: 150px;
+    font-weight: bold;
+}
+.iconeHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: inherit;
+    width: 70px;
+    fill: #21ABE1;
+}
+.iconeMenu svg{
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+.menuDeroulant p{
+    font-size: 16px;
+    padding: 0 0 0 10px;
+}
+.menuDeroulant li:hover .iconeHeader, .menuDeroulant li:hover .iconeHeader svg{
+    color:#F59824;
+    fill:#F59824;
+}
+.menuDeroulant li li:hover .iconeMenu,.menuDeroulant li li:hover .iconeMenu p, .menuDeroulant li li:hover a svg{
+    color:#F59824;
+    fill:#F59824;
+    background-color: white;
+}
+/*=====================SCROLLING MENU==========================*/
+.menuDeroulant{
+    padding:0;
+    margin:0;
+    list-style:none;
+    height: inherit;
+    width: inherit;
+}
+/*Search*/
+.navSearch .fondDeroulant{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position:absolute;
+    z-index: 1000;
+    background-color: #F0F0F0;
+    border-radius:0 0 3px 3px;
+    max-height: 0px;
+    left: 0;
+    overflow:hidden;
+    -moz-transition: .8s all .3s;
+    -webkit-transition: .8s all .3s;
+    transition: .8s all .3s;
+}
+.menuDeroulant label{
+    padding: 0 10px 0 0;
+}
+.menuDeroulant li ul div li:nth-child(1){
+    padding-bottom: 10px;
+}
+.menuDeroulant li ul div li:nth-child(3){
+    padding-top: 10px;
+}
+/*nav*/
+.navMenu .fondDeroulant{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position:absolute;
+    z-index: 1000;
+    background-color: #F0F0F0;
+    border-radius:0 0 3px 3px;
+    max-height: 0px;
+    right: 0;
+    overflow:hidden;
+    -moz-transition: .8s all .3s;
+    -webkit-transition: .8s all .3s;
+    transition: .8s all .3s;
+}
+.menuDeroulant li{
+    position:relative;
+    border-radius:0;
+    height: inherit;
+    width: inherit;
+}
+.menuDeroulant li:hover ul{
+    height: initial;
+    max-height: inherit;
+}
+.menuDeroulant li:last-child li{
+    height: inherit;
+    padding: 0 10px;
+}
+.menuDeroulant li ul li:nth-child(1){
+    padding-top: 10px;
+}
+.menuDeroulant li ul li:nth-child(4){
+    padding-bottom: 10px;
+}
+
+/*============================================================*/
+/*                            MAIN                            */
+/*============================================================*/
+
+main{
+    position: relative;
+}
+.logoMain{
+    position: relative;
+    display: flex;
+    height: 200px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+.logoMain svg{
+    position: absolute;
+    display: flex;
+    height: 160px;
+    width: inherit;
+    padding: 5px;
+}
+.logoMain h1{
+    display: flex;
+    padding-top: 5px;
+    font-family: FredokaOne;
+}
+.gridVignette {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+}
+.gridVignette > article{
+    background-color: #f0f0f0;
+    padding: .5rem;
+    border-radius: 0.5rem;
+}
+.gridVignette article div{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gridVignette article div span{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.gridVignette article p{
+    text-align: justify;
+    padding: 10px 0;
+}
+.gridVignette article a{
+    border: none;
+    color: white;
+    border-radius: 3px;
+    width: auto;
+    font-size: 16px;
+    font-weight: bold;
+}
+.gridVignette article div a{
+    padding: 10px 30px;
+    text-align: center;
+}
+.gridVignette a:hover {
+    color:#F59824;
+    fill:#F59824;
+    background-color: white;
+}
+.gridVignette article a:hover img {
+    transition: all 1s;
+    transform:scale(1.2, 1.2);
+}
+.gridVignette article figure{
+    overflow: hidden;
+}
+/*============================================================*/
+/*                           FOOTER                           */
+/*============================================================*/
+footer{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+.fondFooter{
+    position: absolute;
+    display: flex;
+    height: inherit;
+    width: inherit;
+    box-shadow: #63626280 0px -4px 8px;
+}
+footer section{
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+.mentions{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.mentions a{
+    color: #636262;
+    padding: 0 10px;
+}
+footer p, footer svg{
+    color: #636262;
+    fill: #636262;
+}

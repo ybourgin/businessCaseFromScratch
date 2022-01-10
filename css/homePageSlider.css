@@ -1,0 +1,85 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.diaporama{
+    position: relative;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    transition: opacity 1s ease-in;
+}
+.diaporama img{
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: #63626280 0px 4px 8px;
+}
+.diaporama img + .diaporama img { 
+    opacity: 0; 
+}
+.btnSliderCycle{
+    display: flex;
+    cursor: pointer;
+    box-shadow: none!important;
+}
+.btnStartCycle{
+    /* box-shadow: none!important; */
+    display: flex;
+    cursor: pointer;
+    background-color: #21abe17c;
+    border-radius: 8%;
+    transition: opacity 0.3s ease;
+    color: #F59824;
+    max-width: 20%;
+    padding: 2%;
+    right: 1%;
+}
+.sliderBtnLeft img{
+    top: 44%;
+    box-shadow: none!important;
+    display: flex;
+    cursor: pointer;
+    background-color: #21abe17c;
+    border-radius: 8%;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    color: #F59824;
+    max-width: 8%;
+    padding: 1%;
+    left:1%;
+}
+.sliderBtnRight img{
+    top: 44%;
+    box-shadow: none!important;
+    display: flex;
+    cursor: pointer;
+    background-color: #21abe17c;
+    border-radius: 8%;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    color: #F59824;
+    max-width: 8%;
+    padding: 1%;
+    right: 1%;
+}
+.sliderImagelegend{
+    position: absolute;
+    font-family: FredokaOne;
+    color: #F59824;
+    background-color: #21abe17c;
+    border-radius: 4px;
+    font-size: 24px;
+    bottom: 0ch;
+    width: 80%;
+    text-align: center;
+    padding: 1ch;
+    margin: 1% 10%;
+}
+.btnStartCycleContainer{
+    position: absolute;
+    margin-left: 47%;
+    top: 44%;
+}

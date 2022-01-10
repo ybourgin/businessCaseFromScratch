@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/homePageSlider.js"></script>
+    <title>Centre'Auto'Ccas</title>
+</head>
+<body>
+<!--==============================================================================================================================-->
+<!--                                                       HEADER                                                                 -->
+<!--==============================================================================================================================-->
+    <header>
+        <div class="fondHeader fondGris opacity ombre"></div>
+    <!--===============================ZONE DE RECHERCHE==========================================================================-->
+        <nav class="navSearch">
+            <ul class="menuDeroulant">
+                <li>
+                    <a class="iconeHeader" href="#">
+                        <!--image Loupe-->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="136pt" version="1.1" viewBox="-1 0 136 136.21852" width="136pt">
+                            <path d="M 93.148438 80.832031 C 109.5 57.742188 104.03125 25.769531 80.941406 9.421875 C 57.851562 -6.925781 25.878906 -1.460938 9.53125 21.632812 C -6.816406 44.722656 -1.351562 76.691406 21.742188 93.039062 C 38.222656 104.707031 60.011719 105.605469 77.394531 95.339844 L 115.164062 132.882812 C 119.242188 137.175781 126.027344 137.347656 130.320312 133.269531 C 134.613281 129.195312 134.785156 122.410156 130.710938 118.117188 C 130.582031 117.980469 130.457031 117.855469 130.320312 117.726562 Z M 51.308594 84.332031 C 33.0625 84.335938 18.269531 69.554688 18.257812 51.308594 C 18.253906 33.0625 33.035156 18.269531 51.285156 18.261719 C 69.507812 18.253906 84.292969 33.011719 84.328125 51.234375 C 84.359375 69.484375 69.585938 84.300781 51.332031 84.332031 C 51.324219 84.332031 51.320312 84.332031 51.308594 84.332031 Z M 51.308594 84.332031"/>
+                        </svg>
+                        <p class="pMenu">Recherche</p>
+                    </a>
+            <!--recherche déroulante-->
+                    <ul class="ombre fondDeroulant">
+                        <div>
+                            <li>
+                                <form method="POST" action="traitement.php">
+                                    <fieldset class="fondBleu">
+                                        <label for="marques">Marques</label>
+                                        <select name="Marques" id="marques"><!--multiple-->
+                                            <option value="renault">Renault</option>
+                                            <option value="peugeot">Peugeot</option>
+                                            <option value="citroën">Citroën</option>
+                                            <option value="dacia">Dacia</option>
+                                        </select>
+                                    </fieldset>
+                                </li>
+                                <li>
+                                    <fieldset class="fondBleu">
+                                        <label for="modeles">Modèles</label>
+                                        <select name="Modèles" id="modeles"><!--multiple-->
+                                            <option value="c1">C1</option>
+                                            <option value="c2">C2</option>
+                                            <option value="c3">C3</option>
+                                            <option value="c4">C4</option>
+                                            <option value="c5">C5</option>
+                                            <option value="c6">C6</option>
+                                        </select>
+                                    </fieldset>
+                                </li>
+                                <li>
+                                    <fieldset class="fondBleu">
+                                        <label for="carburants">Carburants</label>
+                                        <select name="Carburants" id="carburants"><!--multiple-->
+                                            <option value="essence">Essence</option>
+                                            <option value="diesel">Diesel</option>
+                                            <option value="gpl">GPL</option>
+                                            <option value="electrique">Electrique</option>
+                                        </select>
+                                    </fieldset>
+                                </li>
+                            </div>
+                            <div>
+                                <li>
+                                    <fieldset class="fondBleu">
+                                        <label for="annee">Année</label>
+                                        <input type="range" name="annee" min="0" max="60" step="2"/>
+                                    </fieldset>
+                                </li>
+                                <li>
+                                    <fieldset class="fondBleu">
+                                        <label for="kilometrage">Kilomètrage</label>
+                                        <input type="range" name="nb" min="0" max="60" step="2"/>
+                                    </fieldset>
+                                </li>
+                                <li>
+                                    <fieldset class="fondBleu" >
+                                        <label for="prix">Prix</label>
+                                        <input type="range" name="prix" min="0" max="60" step="2"/>
+                                    </fieldset>
+                                </li>
+                            </div>
+                            <fieldset class="fieldSearch">
+                                <a href="" class="fondOrange">
+                                    <svg viewBox="0 0 365.696 365.696"  xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m243.1875 182.859375 113.132812-113.132813c12.5-12.5 12.5-32.765624 0-45.246093l-15.082031-15.082031c-12.503906-12.503907-32.769531-12.503907-45.25 0l-113.128906 113.128906-113.132813-113.152344c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503907-12.5 32.769531 0 45.25l113.152344 113.152344-113.128906 113.128906c-12.503907 12.503907-12.503907 32.769531 0 45.25l15.082031 15.082031c12.5 12.5 32.765625 12.5 45.246093 0l113.132813-113.132812 113.128906 113.132812c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082031c12.5-12.503906 12.5-32.769531 0-45.25zm0 0"/>
+                                    </svg>
+                                    <p>Annuler</p>
+                                </a>
+                                <a href="" class="fondBleu">
+                                    <svg version="1.1" viewBox="-1 0 136 136.21852" xmlns="http://www.w3.org/2000/svg" >
+                                        <path d="M 93.148438 80.832031 C 109.5 57.742188 104.03125 25.769531 80.941406 9.421875 C 57.851562 -6.925781 25.878906 -1.460938 9.53125 21.632812 C -6.816406 44.722656 -1.351562 76.691406 21.742188 93.039062 C 38.222656 104.707031 60.011719 105.605469 77.394531 95.339844 L 115.164062 132.882812 C 119.242188 137.175781 126.027344 137.347656 130.320312 133.269531 C 134.613281 129.195312 134.785156 122.410156 130.710938 118.117188 C 130.582031 117.980469 130.457031 117.855469 130.320312 117.726562 Z M 51.308594 84.332031 C 33.0625 84.335938 18.269531 69.554688 18.257812 51.308594 C 18.253906 33.0625 33.035156 18.269531 51.285156 18.261719 C 69.507812 18.253906 84.292969 33.011719 84.328125 51.234375 C 84.359375 69.484375 69.585938 84.300781 51.332031 84.332031 C 51.324219 84.332031 51.320312 84.332031 51.308594 84.332031 Z M 51.308594 84.332031 "/>
+                                    </svg>
+                                    <p>Valider</p>
+                                </a>
+                            </fieldset>
+                        </form>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    <!--===================================================LOGO===========================================================================-->
+        <a href="">
+            <figure class="logoHeader">
+                <svg version="1.1" id="logoCercle" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="256" height="200" viewBox="0 0 256 200" sodipodi:docname="logoCercles.svg" inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+                    <path id="basDroite" style="display:inline;opacity:0.998;fill:#f69216;fill-opacity:1;stroke:none;stroke-width:0.193158;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                        d="m 26.307241,158.34479 c -3.442748,15.7125 2.54913,54.30255 92.997309,14.73303 l 23.68646,-0.39092 C 46.409729,225.76555 8.8341262,190.67479 26.307241,158.34479 Z"
+                        sodipodi:nodetypes="cccc" />
+                    <path id="basGauche" style="display:inline;opacity:0.996;fill:#21abe1;fill-opacity:1;stroke:none;stroke-width:0.193158;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                        d="M 16.587829,144.45963 C 6.9960933,159.98142 5.5611925,169.63443 9.0399039,185.06254 -1.548317,171.19431 -2.487121,160.55379 4.4061374,144.55113 Z"
+                        sodipodi:nodetypes="cccc" />
+                    <path id="hautDroite" style="display:inline;opacity:0.998;fill:#21abe1;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                        d="M 203.80292,100.86588 C 220.47468,65.394662 164.16274,57.881897 101.48723,99.623175 l 12.16083,-0.0095 c 66.47202,-36.785417 93.38533,-20.138648 90.15486,1.252245 z"
+                        sodipodi:nodetypes="ccccc"
+                        transform="matrix(1.8321045,0,0,2.0366654,-122.82032,-126.59967)" />
+                    <path id="hautGauche" style="display:inline;opacity:0.996;fill:#f59217;fill-opacity:0.945098;stroke:none;stroke-width:0.193158;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                        d="M 30.269359,75.799331 45.02235,75.650192 C 111.98054,14.635676 188.68926,-4.7393136 218.38754,15.986967 199.4369,-15.028847 111.2951,-3.8914596 30.269359,75.799331 Z"
+                        sodipodi:nodetypes="cccc" />
+                </svg>
+                <p class="colorBlue">Centre</p><p class="colorOrange">'Auto'Ccas</p>
+            </figure>
+        </a>
+    <!--===================================================MENU===========================================================================-->
+        <nav class="navMenu">
+            <ul class="menuDeroulant">
+                <li>
+                    <a class="iconeHeader" href="#">
+                        <!--image burgerBarre-->
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="124px" height="124px" viewBox="0 0 124 124" style="enable-background:new 0 0 124 124;" xml:space="preserve">
+                            <path d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/>
+                            <path d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/>
+                            <path d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/>
+                        </svg>
+                        <p class="pMenu">menu</p>
+                    </a>
+            <!--menu déroulant-->
+                    <ul class="ombre fondDeroulant">
+                        <li>
+                            <a class="fondBleu iconeMenu" href="">
+                                <!--image home-->
+                                <svg height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m498.195312 222.695312c-.011718-.011718-.023437-.023437-.035156-.035156l-208.855468-208.847656c-8.902344-8.90625-20.738282-13.8125-33.328126-13.8125-12.589843 0-24.425781 4.902344-33.332031 13.808594l-208.746093 208.742187c-.070313.070313-.140626.144531-.210938.214844-18.28125 18.386719-18.25 48.21875.089844 66.558594 8.378906 8.382812 19.445312 13.238281 31.277344 13.746093.480468.046876.964843.070313 1.453124.070313h8.324219v153.699219c0 30.414062 24.746094 55.160156 55.167969 55.160156h81.710938c8.28125 0 15-6.714844 15-15v-120.5c0-13.878906 11.289062-25.167969 25.167968-25.167969h48.195313c13.878906 0 25.167969 11.289063 25.167969 25.167969v120.5c0 8.285156 6.714843 15 15 15h81.710937c30.421875 0 55.167969-24.746094 55.167969-55.160156v-153.699219h7.71875c12.585937 0 24.421875-4.902344 33.332031-13.808594 18.359375-18.371093 18.367187-48.253906.023437-66.636719zm0 0"/>
+                                </svg>
+                                <p>home</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="fondBleu iconeMenu" href="">
+                                <!--image user-->
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 460.8 460.8" style="enable-background:new 0 0 460.8 460.8;" xml:space="preserve">
+                                    <path d="M230.432,0c-65.829,0-119.641,53.812-119.641,119.641s53.812,119.641,119.641,119.641s119.641-53.812,119.641-119.641S296.261,0,230.432,0z"/>
+                                    <path d="M435.755,334.89c-3.135-7.837-7.314-15.151-12.016-21.943c-24.033-35.527-61.126-59.037-102.922-64.784c-5.224-0.522-10.971,0.522-15.151,3.657c-21.943,16.196-48.065,24.555-75.233,24.555s-53.29-8.359-75.233-24.555c-4.18-3.135-9.927-4.702-15.151-3.657c-41.796,5.747-79.412,29.257-102.922,64.784c-4.702,6.792-8.882,14.629-12.016,21.943c-1.567,3.135-1.045,6.792,0.522,9.927c4.18,7.314,9.404,14.629,14.106,20.898c7.314,9.927,15.151,18.808,24.033,27.167c7.314,7.314,15.673,14.106,24.033,20.898c41.273,30.825,90.906,47.02,142.106,47.02s100.833-16.196,142.106-47.02c8.359-6.269,16.718-13.584,24.033-20.898c8.359-8.359,16.718-17.241,24.033-27.167c5.224-6.792,9.927-13.584,14.106-20.898C436.8,341.682,437.322,338.024,435.755,334.89z"/>
+                                </svg>
+                                <p>user</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="fondBleu iconeMenu" href="">
+                                <!--image mail-->
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                    <path d="M507.49,101.721L352.211,256L507.49,410.279c2.807-5.867,4.51-12.353,4.51-19.279V121C512,114.073,510.297,107.588,507.49,101.721z"/>
+                                    <path d="M467,76H45c-6.927,0-13.412,1.703-19.279,4.51l198.463,197.463c17.548,17.548,46.084,17.548,63.632,0L486.279,80.51 C480.412,77.703,473.927,76,467,76z"/>
+                                    <path d="M4.51,101.721C1.703,107.588,0,114.073,0,121v270c0,6.927,1.703,13.413,4.51,19.279L159.789,256L4.51,101.721z"/>
+                                    <path d="M331,277.211l-21.973,21.973c-29.239,29.239-76.816,29.239-106.055,0L181,277.211L25.721,431.49C31.588,434.297,38.073,436,45,436h422c6.927,0,13.412-1.703,19.279-4.51L331,277.211z"/>
+                                </svg>
+                                <p>contact</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="fondBleu iconeMenu" href="">
+                                <!--image help-->
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                    <path d="M248.158,343.22c-14.639,0-26.491,12.2-26.491,26.84c0,14.291,11.503,26.84,26.491,26.84c14.988,0,26.84-12.548,26.84-26.84C274.998,355.42,262.799,343.22,248.158,343.22z"/>
+                                    <path d="M252.69,140.002c-47.057,0-68.668,27.885-68.668,46.708c0,13.595,11.502,19.869,20.914,19.869c18.822,0,11.154-26.84,46.708-26.84c17.429,0,31.372,7.669,31.372,23.703c0,18.824-19.52,29.629-31.023,39.389c-10.108,8.714-23.354,23.006-23.354,52.983c0,18.125,4.879,23.354,19.171,23.354c17.08,0,20.565-7.668,20.565-14.291c0-18.126,0.35-28.583,19.521-43.571c9.411-7.32,39.04-31.023,39.04-63.789S297.307,140.002,252.69,140.002z"/>
+                                    <path d="M256,0C114.516,0,0,114.497,0,256v236c0,11.046,8.954,20,20,20h236c141.483,0,256-114.497,256-256C512,114.516,397.503,0,256,0z M256,472H40V256c0-119.377,96.607-216,216-216c119.377,0,216,96.607,216,216C472,375.377,375.393,472,256,472z"/>
+                                </svg>
+                                <p>question</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>      
+    </header>
+<!--==============================================================================================================================-->
+<!--                                                    MAIN                                                                      -->
+<!--==============================================================================================================================-->
+
+    <main>
+        <!--LOGO-->
+        <figure class="logoMain" alt="titre accueil" title="titre accueil">
+            <svg version="1.1" id="logoCercle" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="256" height="200" viewBox="0 0 256 200" sodipodi:docname="logoCercles.svg" inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+                <path id="basDroite" style="display:inline;opacity:0.998;fill:#f69216;fill-opacity:1;stroke:none;stroke-width:0.193158;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 26.307241,158.34479 c -3.442748,15.7125 2.54913,54.30255 92.997309,14.73303 l 23.68646,-0.39092 C 46.409729,225.76555 8.8341262,190.67479 26.307241,158.34479 Z"
+                    sodipodi:nodetypes="cccc" />
+                <path id="basGauche" style="display:inline;opacity:0.996;fill:#21abe1;fill-opacity:1;stroke:none;stroke-width:0.193158;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 16.587829,144.45963 C 6.9960933,159.98142 5.5611925,169.63443 9.0399039,185.06254 -1.548317,171.19431 -2.487121,160.55379 4.4061374,144.55113 Z"
+                    sodipodi:nodetypes="cccc" />
+                <path id="hautDroite" style="display:inline;opacity:0.998;fill:#21abe1;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 203.80292,100.86588 C 220.47468,65.394662 164.16274,57.881897 101.48723,99.623175 l 12.16083,-0.0095 c 66.47202,-36.785417 93.38533,-20.138648 90.15486,1.252245 z"
+                    sodipodi:nodetypes="ccccc"
+                    transform="matrix(1.8321045,0,0,2.0366654,-122.82032,-126.59967)" />
+                <path id="hautGauche" style="display:inline;opacity:0.996;fill:#f59217;fill-opacity:0.945098;stroke:none;stroke-width:0.193158;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 30.269359,75.799331 45.02235,75.650192 C 111.98054,14.635676 188.68926,-4.7393136 218.38754,15.986967 199.4369,-15.028847 111.2951,-3.8914596 30.269359,75.799331 Z"
+                    sodipodi:nodetypes="cccc" />
+            </svg>
+            <h1><span class="colorBlue">Centre</span><span class="colorOrange">'Auto'Ccas</span></h1>
+        </figure>
+        <!--Caroussel-->
+        <div class="diaporama">
+            <img class="images" src="img/homePageSlider/1.jpg">
+            <div class="sliderBtnLeft" onclick="ChangeImage(-1)"><img src="img/homePageSlider/btnLeft.svg"></div>
+            <div class="btnStartCycleContainer">
+                <a href="#" class="btnStartCycle" onclick="Cycle(event)">
+                    <img class="btnSliderCycle" src="img/homePageSlider/btnPlay.svg"  />
+                </a>
+            </div>
+            <div class="sliderBtnRight" onclick="ChangeImage(1)"><img src="img/homePageSlider/btnRight.svg" alt=""></div>
+            <p class="sliderImagelegend">Foret</p>
+        </div>
+        <!--Vignettes-->
+        <section class="gridVignette">
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+            <article class="ombre">
+                <figure>
+                    <a href="#">
+                        <img src="img/pictures/ford4X4.jpg" alt="4x4 Ford" width="100%" height="auto"/>
+                    </a>
+                </figure>
+                <div>
+                    <span>
+                        <h2>4x4 Ford</h2>
+                        <h3>Année 2015</h3>
+                    </span>
+                    <span>
+                        <h3>20000 km</h3>
+                        <h3>15000 euros</h3>
+                    </span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto soluta id natus aliquam, Cum voluptatibus sapiente repudiandae obcaecati vitae, maxime enim ratione aliquam sit. Reprehenderit aspernatur tenetur odio nulla dolores!</p>
+                    <a href="" class="fondOrange">+ de détails</a>
+                </div>
+            </article>
+        </section>
+    </main>
+<!--==============================================================================================================================-->
+<!--                                                                 FOOTER                                                       -->
+<!--==============================================================================================================================-->
+    <footer>
+        <div class="fondFooter fondGris opacity"></div>
+        <section>
+            <div>
+
+            </div>
+            <div>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path style="stroke: white;" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line style="stroke: white;" x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                    </svg>
+                </a>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </div>
+            <div class="mentions">
+                <a href="">Conditions générales</a>
+                <a href="">Mentions légales</a>
+                <a href="">Charte cookies</a>
+                <a href="">Contacts</a>
+            </div>
+            <p>Copyright &copy; Centre'Auto'Ccas - Tous droits réservés</p>
+        </section>
+    </footer>
+</body>
+</html>
